@@ -80,3 +80,45 @@ print(drzewa)
 drzewa.remove("topola")
 print(drzewa)
 
+#słownik - dictionary
+pojazd = {
+    "marka":"Ford",
+    "model":"Mustang",
+    "rok":2010,
+    "kolor":"czarny",
+    10004:"pb98"
+}
+
+print(pojazd)
+print(type(pojazd))
+
+print(pojazd["model"])
+
+miasto = {
+    "Warszawa":{
+        "województwo":"mazowieckie",
+        "populacja":1890340,
+        "powierzchnia":517.4
+    },
+    "Kraków":{
+        "województwo":"małopolskie",
+        "populacja":780000,
+        "powierzchnia":326.86
+    },
+    "Łódź":{
+        "województwo":"łódzkie",
+        "populacja":670100,
+        "powierzchnia":293.25
+    },
+    "Wrocław":{
+        "województwo":"dolnośląskie",
+        "populacja":643782,
+        "powierzchnia":293.85
+    },
+    "Gdańsk":{
+        "województwo":"pomorskie",
+        "populacja":470900,
+        "powierzchnia":262
+    }
+}
+
