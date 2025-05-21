@@ -122,3 +122,24 @@ miasto = {
     }
 }
 
+print(f"miasta polski: {miasto}")
+info_wawa = miasto["Warszawa"]
+print(info_wawa)
+print(f"populacja Warszawy: {info_wawa['populacja']}")
+
+#dodawanie nowego miasta
+miasto["Poznań"] = {
+        "województwo":"wielkopolskie",
+        "populacja":534600,
+        "powierzchnia":261.98
+    }
+
+print(miasto)
+
+del miasto["Gdańsk"]
+
+print(miasto)
+
+print(f"\ninformacje o miastach:")
+for m,inf in miasto.items():
+    print(f"{m} -> {inf}")
