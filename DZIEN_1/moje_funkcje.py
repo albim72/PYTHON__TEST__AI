@@ -54,3 +54,44 @@ def dodaj_i_zlicz(x):
 
 print(dodaj_i_zlicz(5))
 print(dodaj_i_zlicz(5))
+
+#funkcje za parametrami domyślnymi
+
+#1
+def przywitaj(imie="Janusz"):
+    print(f"Cześć, {imie}!")
+
+przywitaj("Ola")
+przywitaj()
+
+#przykład niebezpieczny!
+def dodaj_wartosc(x,lista=[]):
+    lista.append(x)
+    return lista
+
+print(dodaj_wartosc(1))
+print(dodaj_wartosc(2))
+
+#wersja poprawna
+def dodaj_dobrze(x,lista=None):
+    if lista is None:
+        lista = []
+    lista.append(x)
+    return lista
+
+print(dodaj_dobrze(1))
+print(dodaj_dobrze(2))
+
+#funkcja z zależnymi parametrami domyślnymi
+def przydziel_bonus(punkty,mnoznik=1.1):
+    return punkty*mnoznik
+
+print(przydziel_bonus(45))
+print(przydziel_bonus(45,1.2))
+
+#prametr domyślny jako funkcja(callback)
+def opercja(x,y,metoda=lambda a,b:a+b):
+    return metoda(x,y)
+
+print(opercja(3,4))
+print(opercja(3,4,lambda a,b:40*a*b))
