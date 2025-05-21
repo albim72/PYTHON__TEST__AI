@@ -41,3 +41,19 @@ print(mieszana)
 inside = [3,2,53,[4.4,4,3.64,1],True,7,[True,False,True,[6,3,67]]]
 print(inside)
 print(inside[6][3][1])
+
+#krotka(tuple)
+animal = ("pies","kot","papuga","koń","szczur","kot","hipopotam")
+print(animal)
+print(type(animal))
+print(animal.count("kot"))
+
+if "papuga" in animal:
+    print("Tak! to działa")
+
+print("koń" in animal)
+
+kolory = ("czerwony","zielony","biały",)
+print(kolory)
+print(type(kolory))
+
