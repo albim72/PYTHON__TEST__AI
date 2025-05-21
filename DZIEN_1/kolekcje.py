@@ -57,3 +57,26 @@ kolory = ("czerwony","zielony","biały",)
 print(kolory)
 print(type(kolory))
 
+aniaml_l = list(animal)
+print(aniaml_l)
+aniaml_l.append("sokół")
+animal = tuple(aniaml_l)
+
+print(animal)
+
+#zbiory
+drzewa = {"dąb","sosna","topola","brzoza","dąb","dąb","jodła"}
+print(drzewa)
+print(drzewa)
+print(drzewa)
+
+drzewa.add("osika")
+print(drzewa)
+
+ekstra = ["świerk","jabłoń","cyprys"]
+drzewa.update(ekstra)
+print(drzewa)
+
+drzewa.remove("topola")
+print(drzewa)
+
