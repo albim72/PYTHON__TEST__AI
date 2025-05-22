@@ -1,6 +1,5 @@
 import time
 
-
 #analiza dekroatorów w pythonie ->
 #dekorator - funkcja która przyjmuje inną funkcję jako argument
 
@@ -29,15 +28,14 @@ def pomiarczasu(funkcja):
 
 def usypiacz(funkcja):
     def wrapper():
-        time.sleep(3)
+        time.sleep(1)
         return funkcja()
     return wrapper
 
-
-@pomiarczasu
 @usypiacz
+@pomiarczasu
 def big_lista():
-    sum([i**5 for i in range(10_000_000)])
+    sum([i**5 for i in range(10_000_000)]) #list comprehension
 
 big_lista()
 
@@ -71,6 +69,7 @@ def mnozenie(a,b):
 
 try:
     print(mnozenie(6,8))
+    print(mnozenie(True,8))
     print(mnozenie(6,"osiem"))
 except TypeError as te:
     print(te)
