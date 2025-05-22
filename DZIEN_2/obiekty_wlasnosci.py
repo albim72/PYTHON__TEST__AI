@@ -8,7 +8,7 @@ class Zwierze(ABC):
 
     @abstractmethod
     def daj_glos(self):
-        pass  # KAŻDA klasa dziedzicząca musi zaimplementować tę metodę
+         pass # KAŻDA klasa dziedzicząca musi zaimplementować tę metodę
 
 
 # === POLIMORFIZM I DZIEDZICZENIE ===
@@ -41,6 +41,12 @@ class Czlowiek:
     def __init__(self, imie, wiek):
         self._imie = imie
         self._wiek = wiek
+
+    """
+    property daje gotowość do refaktoryzacji -> 
+    możemy zmieniać sposób działania atrybutu -> dodać logikę, walidację, przeliczenia
+    bez konieczności zmiany interfejsu API klasy
+    """
 
     @property
     def imie(self):
@@ -99,6 +105,27 @@ class LiczbyDo:
         else:
             raise StopIteration
 
+class Kolor:
+
+    def __new__(takietam, kolor):
+        print("Tworzenie instancji koloru...[new]")
+        return super().__new__(takietam)
+
+    def __init__(blabla, kolor):
+        blabla.kolor = kolor
+        blabla.wartosc = 0 #natężenie barwy 0-255
+
+    @property
+    def kolor(blabla):
+        return blabla._kolor
+
+    @kolor.setter
+    def kolor(blabla, kolor):
+        blabla._kolor = kolor
+
+    def __str__(blabla):
+        return f"Kolor: {blabla._kolor}"
+
 
 # === PRZYKŁADOWE ZASTOSOWANIE ===
 if __name__ == "__main__":
@@ -114,7 +141,8 @@ if __name__ == "__main__":
     # Property
     jan = Czlowiek("Jan", 40)
     print(f"{jan.imie} ma {jan.wiek} lat.")
-    jan.wiek = 41
+    jan.wiek = 12
+    print(f"{jan.imie} ma {jan.wiek} lat.")
 
     # __new__ i __init__
     j = Jednorozec("tęczowy")
@@ -127,5 +155,15 @@ if __name__ == "__main__":
 
     # __iter__
     print("Iteracja po LiczbyDo(5):")
-    for liczba in LiczbyDo(5):
+    for liczba in LiczbyDo(12):
         print(liczba)
+
+    #czy blabla moze być selfem :)
+    kolor = Kolor("czarny")
+    print(kolor)
+    print(kolor.kolor)
+    kolor.wartosc = 211
+    print(kolor)
+
+    kolor.kolor = "szary"
+    print(kolor)
