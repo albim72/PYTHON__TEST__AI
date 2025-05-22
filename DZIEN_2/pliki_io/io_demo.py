@@ -11,7 +11,7 @@ os.makedirs(base_path, exist_ok=True)
 sample_data = {
     "name": "Jan Kowalski",
     "age": 30,
-    "hobbies": ["reading", "cycling", "coding"]
+    "hobbies": ["czytanie", "jazda na rowerze", "kodowanie","ćwiczenia kalisteniczne"]
 }
 
 # --- Operacje na pliku tekstowym ---
