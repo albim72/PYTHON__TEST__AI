@@ -1,0 +1,2 @@
+To jest przykładowy tekst.
+Druga linia tekstu.
